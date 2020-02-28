@@ -149,6 +149,11 @@ public class ChatServer {
                     // all clients. You may have to use a HashMap to store the sockets along 
                     // with the chat client names
                     if(input.startsWith("MULTICAST")) {
+                    	/* splits the message in half for header and body
+                    	 * body with the selected to multicast and header with the context
+                    	 * for body gets splitted too then trimmed then sends the message 
+                    	 * to each selected user and then receives message by sender
+                    	 * */
                 		String selNames = input.substring(9, input.length());
                 		System.out.println("before splitting "+selNames);
                 		String[] namesArr = selNames.split("%%");

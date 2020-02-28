@@ -95,6 +95,7 @@ public class ChatClient {
              * the text area in preparation for the next message.
              */
             public void actionPerformed(ActionEvent e) {
+            	// checks the selection for broadcast or not
             	if(check || namelist.isSelectionEmpty()) {
             		out.println(textField.getText());
                     textField.setText("");
@@ -108,7 +109,7 @@ public class ChatClient {
             				selected.add((String) item);
             			}
             		}
-            		
+            		// sends with prefix MULTICAST to identify by server
             		out.println("MULTICAST"+textField.getText()+"%%"+selected);
             	}
             }
